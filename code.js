@@ -1,16 +1,64 @@
+/* eslint-disable no-unused-vars */
 let names = ["Eric", "Sally", "Michelle", "John", "Sam", "Caleb"];
-function writeHTML(id, text) {
-    document.getElementById(id).innerHTML = text;
+let display = document.getElementById("nameCall")
+display.innerHTML = `Welcome, ${names.join(", ")}`
+function all(){
+    names.forEach(function(item){alert("Welcome, " + item)})
 }
-function inOrder(){
-    names.forEach(element => {
-        alert(`Welcome, ${element}`)
+function everyOther(){
+    names.forEach((element, index) => {
+        if(index%2==0) {
+            alert(`Welcome, ${element}`)
         }
-    )
+    });
 }
-
-document.addEventListener("keyup", (e) => {
-
+function reverse(){
+    let cache = names.reverse()
+    cache.forEach(element => {
+        alert(`Welcome, ${element}`)
+    });
 }
-
-})
+function fourPlus(){
+names.forEach(element => {
+    if(element.length > 4) {
+        alert(`Welcome, ${element}`)
+    }
+});
+}
+function cFirst(){
+    names.forEach(element => {
+        if(element.toLowerCase().charAt(0) == "c"){
+            alert(`Welcome, ${element}`)
+        }
+    });
+}
+function yLast(){
+    names.forEach(element => {
+        if(element.charAt(element.length-1) == "y"){
+            alert(`Welcome, ${element}`)
+        }
+    });
+}
+function middle(){
+    let cache = names
+    cache.pop();cache.pop();cache.shift();cache.shift()
+    cache.forEach(element => {
+        alert(`Welcome, ${element}`)
+    });
+}
+function e() {
+    names.forEach(name => {
+            let ready = true
+            let letters = name.split("")
+            console.log(letters)
+            letters.forEach(letter => {
+                console.log(letter)
+                if(letter == "e"|| letter=="E"){
+                    if(ready == true){
+                        alert(`Welcome, ${name}`)
+                        ready = false
+                    }
+                }
+            });
+    })
+}
