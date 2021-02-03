@@ -1,4 +1,4 @@
-
+/* eslint-disable no-unused-vars */
 let names = ["Eric", "Sally", "Michelle", "John", "Sam", "Caleb"];
 let display = document.getElementById("nameCall")
 display.innerHTML = `Welcome, ${names.join(", ")}`
